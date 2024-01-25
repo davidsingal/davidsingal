@@ -1,5 +1,7 @@
 ---
-import '@fontsource/poppins';
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/500.css';
+import '@fontsource/poppins/600.css';
 
 interface Props {
   title: string;
@@ -19,11 +21,11 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <header>
+    <header class="sticky top-0 bg-white">
       <div class="container flex min-h-[60px] items-center justify-between">
-        <h1 class="text-2xl font-semibold uppercase text-gray-900">David Inga</h1>
+        <h1 class="text-2xl font-semibold uppercase text-gray-900">Inga</h1>
         <nav>
-          <ul class="flex space-x-8 text-sm font-medium uppercase text-gray-900">
+          <ul class="flex space-x-8 text-sm font-medium uppercase tracking-wide text-gray-900">
             <li>
               <a href="/">Home</a>
             </li>
@@ -41,17 +43,22 @@ const { title } = Astro.props;
       </div>
     </header>
     <slot />
+    <footer class="bg-gray-900 py-8">
+      <div class="container flex items-center justify-between text-white">
+        <div>Github</div>
+        <div class="text-sm text-gray-600">© {new Date().getUTCFullYear()} David Inga</div>
+      </div>
+    </footer>
   </body>
 </html>
 <style is:global>
-  @layer base {
+  @layer global {
     html {
-      @apply bg-white font-body text-gray-600 antialiased;
+      @apply bg-white font-sans text-gray-900 antialiased;
     }
-  }
-  @layer components {
+
     .container {
-      @apply mx-auto px-4;
+      @apply mx-auto max-w-7xl px-4;
     }
   }
 </style>
