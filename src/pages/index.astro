@@ -14,10 +14,47 @@ import Layout from '../layouts/Layout.astro';
           The namics of how users interact with interactive elements within a user interface flow
           chart based on container proportion.
         </p>
-        <div>
+        <div class="space-x-2">
           <Button>My work</Button>
           <Button variant="outline">Get in touch</Button>
         </div>
+      </div>
+    </section>
+    <section class="bg-accent py-12">
+      <div class="container">
+        <h2 class="section-title">About me</h2>
+        <div class="grid grid-cols-3 gap-2">
+          <div></div>
+          <div class="col-span-2 space-y-4">
+            <h3 class="text-3xl font-semibold">I'm David Inga</h3>
+            <p class="text-lg">
+              A <span class="text-primary">tech lead & front-end developer</span> at Vizzuality, based
+              in Madrid
+            </p>
+            <p>A senior front end</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-12">
+      <div class="container">
+        <h2 class="section-title">My work</h2>
+        <p>
+          The namics of how users interact with interactive elements within a user interface flow
+          chart based on container proportion.
+        </p>
+      </div>
+    </section>
+    <section class="bg-accent py-12">
+      <div class="container">
+        <h2 class="section-title">Get in touch</h2>
+        <p>
+          The namics of how users interact with interactive elements within a user interface flow
+          chart based on container proportion.
+          <a href={`mailto:${atob('ZGF2aWRzaW5nYWRldkBnbWFpbC5jb20=')}`}
+            >{atob('ZGF2aWRzaW5nYWRldkBnbWFpbC5jb20=')}</a
+          >
+        </p>
       </div>
     </section>
   </main>

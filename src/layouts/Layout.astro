@@ -24,34 +24,47 @@ const { title } = Astro.props;
   <body>
     <header class="bg-background fixed left-0 top-0 w-full">
       <div class="container flex min-h-[60px] items-center justify-between">
-        <h1 class="text-2xl font-semibold uppercase">Inga</h1>
+        <h1 class="text-2xl font-semibold uppercase">DAVID INGA</h1>
         <nav>
           <ul class="flex space-x-8 text-sm font-medium uppercase tracking-wide">
             <li>
               <a href="/">Home</a>
             </li>
             <li>
-              <a href="/blog">About me</a>
+              <a href="#about-me">About me</a>
             </li>
             <li>
-              <a href="/blog">My work</a>
+              <a href="#my-work">My work</a>
             </li>
             <li>
-              <a href="/blog">Contact</a>
+              <a href="#contact">Contact</a>
             </li>
           </ul>
         </nav>
       </div>
     </header>
     <slot />
-    <footer class="bg-foreground text-background py-8">
-      <div class="container flex items-center justify-between">
-        <div>Github</div>
-        <div class="text-sm">© {new Date().getUTCFullYear()} David Inga</div>
+    <footer class="bg-foreground text-background py-8 text-sm">
+      <div class="container space-y-4 lg:flex lg:items-center lg:justify-between lg:space-y-0">
+        <div>
+          <a href="https://github.com/davidsingal">Github</a>
+        </div>
+        <div>
+          Website made with <a href="https://astro.build">Astro</a>, <a
+            href="https://tailwindcss.com">Tailwind CSS</a
+          >, <a href="https://ui.shadcn.com/">Shadcn UI</a>, and <a
+            href="https://www.typescriptlang.org">TypeScript</a
+          >.
+        </div>
+        <div>© {new Date().getUTCFullYear()} David Inga</div>
       </div>
     </footer>
   </body>
 </html>
+<script is:inline>
+  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+</script>
 <style is:global>
   @layer global {
     html {
